@@ -1,0 +1,35 @@
+{
+  "name": "@deepseek-ai/dsh-client-ui-usage-balance",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Bottom-right DeepSeek Platform usage/balance panel for the DeepSeek Harness web client, with per-answer token, spend, and time ceilings plus a turn ledger that records every answer's totals to disk",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT"
+}
